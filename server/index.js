@@ -23,7 +23,7 @@ app.use(function(req, res, next) {
       console.log(token);
 
       next();
-    } catch (ex) { 
+    } catch (ex) {
       const e = ex;
       return res.status(401).json({ error: "Bad credentials" });
     }
@@ -43,7 +43,7 @@ app.post("/login", (req, res, next) => {
 });
 
 app.post("/signup", (req, res, next) => {
-  console.log(req);
+  console.log(req.body);
 });
 
 app.listen(PORT, function() {
