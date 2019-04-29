@@ -1,0 +1,51 @@
+<div class="login-form">
+  <form [formGroup]="singupForm" (ngSubmit)="onSingupUser()">
+    <h2 class="text-center">Sing up</h2>
+    <div formGroupName="userData">
+      <div class="form-group">
+        <input
+          id="Name"
+          formControlName="Name"
+          type="text"
+          class="form-control"
+          placeholder="Username"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          id="Password"
+          formControlName="Password"
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          id="Password"
+          formControlName="ValidPassword"
+          type="password"
+          class="form-control"
+          placeholder="Valid Password"
+          required
+        />
+      </div>
+      <div *ngIf="!passwordValid">
+        <p class="text-danger">Passwords do not match</p>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Sing up</button>
+      </div>
+      <div class="clearfix">
+        <label class="pull-left checkbox-inline"
+          ><input type="checkbox" /> Remember me</label
+        >
+      </div>
+    </div>
+  </form>
+  <p class="text-center">
+    <a class="btn" (click)="routeToLogin()">Create an Account</a>
+  </p>
+</div>
